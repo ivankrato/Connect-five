@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ButtonBar fx:id="bottomButtonBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <MenuBar fx:id="mainMenuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="gameMenu" mnemonicParsing="false" text="Hra">
+            <items>
+              <MenuItem fx:id="newGameMenuItem" mnemonicParsing="false" onAction="#handleNewGameMenuItemAction" text="Nová hra" />
+                  <MenuItem fx:id="loadGameMenuItem" mnemonicParsing="false" text="Načíst hru" />
+                  <MenuItem fx:id="endMenuItem" mnemonicParsing="false" text="Konec" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Nápověda">
+            <items>
+                  <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" text="Nápověda" />
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="O programu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="240.0" minWidth="320.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="piskvorky.MainWindowController">
+   <top>
+      <MenuBar fx:id="mainMenuBar" maxHeight="-Infinity" prefHeight="25.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="gameMenu" mnemonicParsing="false" text="Hra">
+            <items>
+              <MenuItem fx:id="newGameMenuItem" mnemonicParsing="false" onAction="#handleNewGameMenuItemAction" text="Nová hra" />
+                  <MenuItem fx:id="saveGameMenuItem" disable="true" mnemonicParsing="false" onAction="#handleSaveGameMenuItemAction" text="Uložit hru" />
+                  <MenuItem fx:id="loadGameMenuItem" mnemonicParsing="false" onAction="#handleLoadGameMenuItemAction" text="Načíst hru" />
+                  <MenuItem fx:id="endMenuItem" mnemonicParsing="false" onAction="#handleEndGameMenuItem" text="Konec" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Nápověda">
+            <items>
+                  <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelpMenuItem" text="Nápověda" />
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAboutMenuItem" text="O programu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <ButtonBar fx:id="bottomButtonBar" minWidth="0.0" prefHeight="40.0" prefWidth="0.0" scaleShape="false" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></ButtonBar>
+   </bottom>
+   <right>
+      <VBox fx:id="infovBox" prefWidth="200.0" style="-fx-opacity: 0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="infoGameStatus" text="Na řadě je">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="infoCurrentPlayer">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <HBox>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../gfx/cross.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="infoCrossPlayer" text="Label" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../gfx/circle.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="infoCirclePlayer" text="Label" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Výhra: " />
+                  <Label fx:id="infoMarksInRowToWin" text="0" />
+                  <Label text=" značek za sebou." />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>
